@@ -177,3 +177,21 @@ button {
     grid-row-start: 6;
     grid-row-end: 6;
 }
+
+
+
+
+
+@media screen and (max-width: 650px) {
+    body {
+      background-color: lightgreen;
+
+    }
+
+    .calcContainer {
+        width: 90vw;
+        height: 90vh;
+        max-height: 600px;
+        min-height: 350px;
+
+  }
