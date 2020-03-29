@@ -32,14 +32,15 @@ var values = [];
 var expression;
 //initiated from numPressed to update display
 function collectInfo(x) {
-    
+    //if an expression, save value to expression 
     if (x == "*" || x == "/" || x == "+" || x == "-") {
         expression = x; 
         console.log(expression)
         updateDisplay(expression, "expression")
         return
     } 
-
+    
+    //if =, invoke equals() with first numbers, expression and second set of numbers 
     if (x == "=") {
         console.log('equals pressed')
         equals(leftNumbers, expression, combinedNumbers)
@@ -53,12 +54,14 @@ function collectInfo(x) {
     updateDisplay(combinedNumbers, "numbers")
 }
 
-
+//updates calc display
 var leftNumbers;
 var rightNumbers;
 function updateDisplay(x, type){
+    //if number, update inner html
     if (type == "numbers") {
-    display.innerHTML = "<h1>"+x+"</h1>";
+        display.innerHTML = "<h1>"+x+"</h1>";
+    //if expression, save first set of numbers to leftNumbers, reset values and then update inner html
     } else if (type == "expression") {   
     leftNumbers = combinedNumbers;
     values = [];
@@ -66,7 +69,8 @@ function updateDisplay(x, type){
     }
 }
 
-
+//calculates to find result, then shows result on display
+var result;
 function equals(a, b, c) {
     a = parseFloat(a, 10)
     c = parseFloat(c, 10)
@@ -74,15 +78,19 @@ function equals(a, b, c) {
     if (b == "+") {
         result = a + c;
         display.innerHTML = "<h1>"+result+"</h1>";
+        combinedNumbers = result;
     } if (b == "-") {
         result = a - c;
         display.innerHTML = "<h1>"+result+"</h1>";
+        combinedNumbers = result;
     } if (b == "/") {
         result = a / c;
         display.innerHTML = "<h1>"+result+"</h1>";
+        combinedNumbers = result;
     } if (b == "*") {
         result = a * c;
         display.innerHTML = "<h1>"+result+"</h1>";
+        combinedNumbers = result;
     }
 }
 

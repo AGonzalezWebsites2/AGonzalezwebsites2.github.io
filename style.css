@@ -136,6 +136,10 @@ button {
     grid-row-end: 6;
 }
 
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero {
+    background: white;
+}
+
 #add { 
     grid-column-start: 4;
     grid-column-end: 5;
@@ -164,6 +168,10 @@ button {
     grid-row-end: 6;
 }
 
+#equals {
+    background: rgba(69, 206, 69, 0.795);
+}
+
 #equals { 
     grid-column-start: 3;
     grid-column-end: 4;
@@ -183,10 +191,6 @@ button {
 
 
 @media screen and (max-width: 650px) {
-    body {
-      background-color: lightgreen;
-
-    }
 
     .calcContainer {
         width: 90vw;
